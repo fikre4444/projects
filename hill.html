@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap.min.css" rel="stylesheet"/>
+    <script src = "hill.js"></script>
+</head>
+<body>
+    <h1 class="display-5 text-center shadow-lg p-2">Hill Cipher Encryption</h1>
+    <div>
+        <input class="btn btn-primary ms-3 px-3 mt-3" style="font-size: 110%" type="button" onclick = "viewInstructions()" value = "instructions"/>
+        <a href="index.html" class="btn btn-primary ms-3 px-3 mt-3 align-items-end">Back To Homepage</a>
+    </div>
+    <div id = "whole" class="row m-1">
+       <div id = "encrypt" class="m-2 p-3 rounded shadow-lg col">
+            <h1 class="h3 text-secondary fw-bolder">For Encryption</h1>
+            <div class="m-2 input-group mb-3 " style="border: solid rgba(80, 80, 80, 0.5) 1px; border-radius: 6px;">
+                <label class="input-group-text">Input:</label>
+                <input class="form-control" id = "input" type = "text"/> 
+            </div>
+            <div class="m-2 input-group mb-3">
+                <label class="input-group-text">size: </label> 
+                <input class="border border-secondary-subtle" id = "matrixSize" type = "number" min = "2" max = "3" value = "2" onclick = "generateMatrixInput('matrixSize', 'matrix', 'matrixTable')" onkeydown = "return false"/>
+            </div>
+            <div class="lead text-light bg-dark d-inline-block p-2 mb-1">
+                Matrix-Input
+            </div>
+            <div id = "matrix">
+                <table id = "matrixTable" class="w-50">
+                    <tr>
+                        <td><input type = "number" placeholder="0"/></td><td><input type = "number" placeholder="0"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type = "number" placeholder="0"/></td><td><input type = "number" placeholder="0"/></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <input class="btn btn-danger m-2" type = "button" value = "Encrypt" onclick = "handleEncrypt()"/>
+            </div>
+
+            <div class="lead h6 fw-bolder" id = "resultHolder">
+            </div>
+
+        </div>
+        <div id = "decrypt" class="m-2 p-3 rounded shadow-lg col">          
+
+            <h1 class="h3 text-secondary fw-bolder">For Decryption</h1>
+            <h1 class="h6 text-secondary fw-bolder">Please check Instructions below before trying decryption.</h1>
+            <div class="m-2 input-group mb-3 " style="border: solid rgba(80, 80, 80, 0.5) 1px; border-radius: 6px;">
+                <label class="input-group-text">Cipher Input: </label>
+                <input class="form-control" id = "cipherInput" type = "text"/>
+           </div>
+            <div class="m-2 input-group mb-3">
+                <label class="input-group-text">Size: </label>
+                <input class="border border-secondary-subtle" id = "matrixSizeDec" type = "number" min = "2" max = "3" value = "2" onclick = "generateMatrixInput('matrixSizeDec', 'matrixDec', 'matrixTableDec')" onkeydown = "return false"/>
+           </div>
+           <div class="lead text-light bg-dark d-inline-block p-2 mb-1">
+                Matrix-Input
+            </div>
+            <div id = "matrixDec">
+                <table id = "matrixTableDec">
+                    <tr>
+                        <td><input type = "number" value = "0" placeholder = "0"/></td><td><input type = "number" value = "0" placeholder = "0"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type = "number" value = "0" placeholder = "0"/></td><td><input type = "number" value = "0" placeholder = "0"/></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <input class="btn btn-success m-2" type = "button" onclick = "handleDecrypt()" value = "Decrypt"/>
+                <input class="btn btn-success m-2" type = "button" onclick = "togglerFunction()" value = "Instructions for Decryption"/>                  
+            </div>
+
+            <div class="lead h6 fw-bolder" id = "resultHolderDec">
+            </div>
+
+        </div>
+    </div>
+    <div class="m-2 p-3 rounded shadow-lg container-xl bg-secondary-subtle" id="decInstructions" style="display: none;">
+        <h5>Instructions</h5>
+        <h6>In order to use the hill cipher decryption, there are somethings that the encryption key matrix must satisfy for the deryption to work.</h6>
+        <h6>1. First the matrix must be invertible which means its determinant must not equal zero.</h6>
+        <h6>2. second the matrix's determinant must be coprime with 26.</h6>
+        <h6>3. If you can't come up with a matrix that satisfies the above conditions on your own, please generate a 2x2 or 3x3 key matrix from the website <a href="https://www.cryptool.org/en/cto/hill" target = "_blank">cryptool</a>.</h6>
+        <h6>4. After going to this website, go to the middle of the page, click "generate new random key" and input those values into the input matrix here.</h6>
+    </div>      
+</body>
+</html>

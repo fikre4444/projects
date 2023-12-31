@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src = "playfair.js"></script>
+</head>
+<body>
+    <h1 class="display-5 text-center shadow-lg p-2">Playfair Cipher Encryption</h1>
+    <input class="btn btn-primary ms-5 px-3 mt-3" style="font-size: 110%" type = "button" value = "Instructions" onclick = "viewInstructions()"/>
+    <a href="index.html" class="btn btn-primary ms-3 px-3 mt-3 align-items-end">Back To Homepage</a>
+    <br><br>
+    <div id = "whole" class="row">
+        <div class="ms-5 me-3 p-3 rounded shadow-lg col">
+            <h1 class="h3 text-secondary fw-bolder">For Encryption</h1>
+            <div class="m-2 input-group mb-3 " style="border: solid rgba(80, 80, 80, 0.5) 1px; border-radius: 6px;">
+                <label class="input-group-text">Input: </label>
+                <input class="form-control " id = "input" type = "text"/><br>
+            </div>
+            <div class="m-2 input-group mb-3">
+                <label class="input-group-text">Keyword: </label>
+                <input class="border border-secondary-subtle" id = "keyword" type = "text"/><br>
+            </div>
+            <input  class="btn btn-danger m-2" type = "button" onclick = "handleEncrypt()" value = "Encrypt"/>
+            <div class="lead h6 fw-bolder" id = "resultEnc"></div>
+        </div>
+        <br/>
+        <div class="ms-5 me-5 p-3 rounded shadow-lg col">
+            <h1 class="h3 text-secondary fw-bolder">For Decryption</h1>
+            <div class="m-2 input-group mb-3 " style="border: solid rgba(80, 80, 80, 0.5) 1px; border-radius: 6px;">
+                <label class="input-group-text">Input: </label>
+                <input class="form-control" id = "inputDec" type = "text"/><br>
+            </div>
+            <div class="m-2 input-group mb-3">
+                <label class="input-group-text">Keyword: </label>
+                <input class="border border-secondary-subtle" id = "keywordDec" type = "text"/><br>
+            </div>
+            <input class="btn btn-success m-2" type = "button" onclick = "handleDecrypt()" value = "Decrypt"/>
+            <div class="lead h6 fw-bolder" id = "resultDec"></div>
+        </div>
+        <br/>
+    </div>
+    <table id = "keyMatrix" class="w-50 m-auto mt-3 table table-dark table-bordered mb-0 text-center fw-bolder h5">
+        <tr>
+            <td>a</td><td>b</td><td>c</td><td>d</td><td>e</td>
+        </tr>
+        <tr>
+            <td>f</td><td>g</td><td>h</td><td>i</td><td>k</td>
+        </tr>
+        <tr>
+            <td>l</td><td>m</td><td>n</td><td>o</td><td>p</td>
+        </tr>
+        <tr>
+            <td>q</td><td>r</td><td>s</td><td>t</td><td>u</td>
+        </tr>
+        <tr>
+            <td>v</td><td>w</td><td>x</td><td>y</td><td>z</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src = "caesar.js"></script>
+</head>
+<body>
+    <h1 class="display-5 text-center shadow-lg p-2">Caesar Cipher Encryption</h1>
+    <input class="btn btn-primary ms-5 px-3 mt-3" style="font-size: 110%" type = "button" value = "Instructions" onclick = "viewInstructions()"/>
+    <a href="index.html" class="btn btn-primary ms-3 px-3 mt-3 align-items-end">Back To Homepage</a>
+    <br><br>
+    <div class="row">
+        <div class="ms-5 me-2 p-3 rounded shadow-lg col">
+            <h1 class="h3 text-secondary fw-bolder">For Encryption</h1>
+            <div class="m-2 input-group mb-3 " style="border: solid rgba(80, 80, 80, 0.5) 1px; border-radius: 6px;">
+                <span class="input-group-text">Input: </span>
+                <input class="form-control " id = "input" type = "text"/>
+            </div>
+            <div class="m-2 input-group mb-3" >
+                <span class="input-group-text">Shift : </span>
+                <input class="border border-secondary-subtle" id = "shift" type = "number" min = "0" max = "26" placeholder="0" />
+            </div>
+            <input class="btn btn-danger m-2" type = "button" value = "Encrypt" onclick = "handleEncrypt()"/>
+            <div class="lead h6 fw-bolder" id = "result"></div>
+        </div>
+        <div class="me-5 ms-2 p-3 rounded shadow-lg col">
+            <h1 class="h3 text-secondary fw-bolder">For Decryption</h1>
+            <div class="m-2 input-group mb-3 " style="border: solid rgba(80, 80, 80, 0.5) 1px; border-radius: 6px;">
+                <label class="input-group-text">Input:</label>
+                <input class="form-control" id = "inputDec"  type = "text"/>
+            </div>
+            <div class="m-2 input-group mb-3">
+                <label class="input-group-text">Shift : </label>
+                <input class="border border-secondary-subtle" id = "shiftDec" type = "number" min = "0" max = "26" placeholder="0"/>
+            </div>
+            <input class="btn btn-success m-2" type = "button" value = "Decrypt" onclick = "handleDecrypt()"/>
+            <div class="lead h6 fw-bolder" id = "resultDec"></div>
+        </div>
+    </div>
+    <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>
