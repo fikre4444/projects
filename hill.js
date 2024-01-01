@@ -242,6 +242,7 @@ function hillDecrypt(cipher, keyMatrix){
         alert("The given matrix isn't co-prime with 26, hence isn't a valid matrix for decryption.\nTo find a valid matrix, go to the link https://www.cryptool.org/en/cto/hill and generate a matrix key and input it into this.");
         return;
     }
+    console.log("Cipher is "+cipher);
     cipher = cipher.toLowerCase();
     var keyMatrixInverse = findInverse(keyMatrix);
     var plain = hillCipher(cipher, keyMatrixInverse);
