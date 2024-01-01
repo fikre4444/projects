@@ -1,4 +1,5 @@
 function hillCipher(plain, keyMatrix){
+    plain = plain.toLowerCase();
     var groupedPhrases = getGroupedPhrases(plain, keyMatrix.length);
     var cipher = "";
     for(var i = 0; i < groupedPhrases.length; i++){
