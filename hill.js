@@ -333,6 +333,7 @@ function handleEncrypt(){
 
 function handleDecrypt(){
     var input = String((document.getElementById("cipherInput")).value);
+	input = input.replace(/\s/g, ""); //removes white space
     var matrixSize = Number((document.getElementById("matrixSizeDec")).value);
     var validInput = handleInput(input);
     var matrixTable = document.getElementById("matrixTableDec");
