@@ -10,6 +10,7 @@ function handleInput(input){
 
 function handleEncrypt(){
     var input = String(document.getElementById("input").value);
+    input = input.replace(/\s/g, "") //removes white space
     var shift = Number(document.getElementById("shift").value);
     if(handleInput(input)){
         var cipher = caesarCipher(input, shift);
