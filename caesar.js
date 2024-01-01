@@ -5,7 +5,7 @@ function viewInstructions(){
 }
 
 function handleInput(input){
-    return /^[a-z]+$/.test(input);
+    return /^[a-zA-Z]+$/.test(input);
 }
 
 function handleEncrypt(){
