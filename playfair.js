@@ -180,7 +180,6 @@ function handleInput(input){
 }
 
 function setTable(keyword){
-    keyword = keyword.replace(/\s/g, "") //removes white space
     var keyMatrix = getKeyMatrix(keyword);
     var table = document.getElementById("keyMatrix");
     var rows = table.rows;
@@ -197,6 +196,7 @@ function handleEncrypt(){
     var input = String(document.getElementById("input").value);
     input = input.replace(/\s/g, "") //removes white space
     var keyword = String(document.getElementById("keyword").value);
+    keyword = keyword.replace(/\s/g, "") //removes white space
     if(handleInput(input) && handleInput(keyword)){
         var result = document.getElementById("resultEnc");
         var encrypted = playfairCipher(input, keyword);
@@ -211,6 +211,7 @@ function handleDecrypt(){
     var inputDec = String(document.getElementById("inputDec").value);
     inputDec = inputDec.replace(/\s/g, "") //removes white space
     var keywordDec = String(document.getElementById("keywordDec").value);
+    keywordDec = keywordDec.replace(/\s/g, ""); //removes the white space
     if(handleInput(inputDec) && handleInput(keywordDec)){
         var result = document.getElementById("resultDec");
         var decrypted = decryptPlayfair(inputDec, keywordDec); 
