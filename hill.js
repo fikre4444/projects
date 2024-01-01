@@ -315,6 +315,7 @@ function isMatrixValid(keyMatrix){
 
 function handleEncrypt(){
     var input = String((document.getElementById("input")).value);
+	input = input.replace(/\s/g, "") //removes white space
     var matrixSize = Number((document.getElementById("matrixSize")).value);
     var validInput = handleInput(input);
     var matrixTable = document.getElementById("matrixTable");
