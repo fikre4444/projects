@@ -180,6 +180,7 @@ function handleInput(input){
 }
 
 function setTable(keyword){
+    keyword = keyword.replace(/\s/g, "") //removes white space
     var keyMatrix = getKeyMatrix(keyword);
     var table = document.getElementById("keyMatrix");
     var rows = table.rows;
@@ -194,6 +195,7 @@ function setTable(keyword){
 
 function handleEncrypt(){
     var input = String(document.getElementById("input").value);
+    input = input.replace(/\s/g, "") //removes white space
     var keyword = String(document.getElementById("keyword").value);
     if(handleInput(input) && handleInput(keyword)){
         var result = document.getElementById("resultEnc");
@@ -207,6 +209,7 @@ function handleEncrypt(){
 
 function handleDecrypt(){
     var inputDec = String(document.getElementById("inputDec").value);
+    inputDec = inputDec.replace(/\s/g, "") //removes white space
     var keywordDec = String(document.getElementById("keywordDec").value);
     if(handleInput(inputDec) && handleInput(keywordDec)){
         var result = document.getElementById("resultDec");
