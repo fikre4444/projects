@@ -23,6 +23,7 @@ function handleEncrypt(){
 
 function handleDecrypt(){
     var input = String(document.getElementById("inputDec").value);
+    input = input.replace(/\s/g, "") //removes white space
     var shift = Number(document.getElementById("shiftDec").value);
     if(handleInput(input)){
         var decrypted = caesarDecrypt(input, shift);
