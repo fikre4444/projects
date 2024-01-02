@@ -197,6 +197,7 @@ function handleEncrypt(){
     input = input.replace(/\s/g, "") //removes white space
     var keyword = String(document.getElementById("keyword").value);
     keyword = keyword.replace(/\s/g, "") //removes white space
+    keyword = keyword.toLowerCase();
     if(handleInput(input) && handleInput(keyword)){
         var result = document.getElementById("resultEnc");
         var encrypted = playfairCipher(input, keyword);
@@ -212,6 +213,7 @@ function handleDecrypt(){
     inputDec = inputDec.replace(/\s/g, "") //removes white space
     var keywordDec = String(document.getElementById("keywordDec").value);
     keywordDec = keywordDec.replace(/\s/g, ""); //removes the white space
+    keywordDec = keywordDec.toLowerCase();
     if(handleInput(inputDec) && handleInput(keywordDec)){
         var result = document.getElementById("resultDec");
         var decrypted = decryptPlayfair(inputDec, keywordDec); 
