@@ -1,4 +1,4 @@
-
+//added som ecommoent for dsjflsdjfk
 
 function viewInstructions(){
     alert("Please make sure the input follows the rules.\n1. The input must only be alphabets. \n2. The input must not contain spaces. \n3. The shift number must be between 0 and 26.\n4. The alphabets must me in lowercase");
